@@ -13,39 +13,43 @@ struct MainTabView: View {
     
     var body: some View {
         if let user = viewModel.currentUser {
-            TabView(selection: $selectedIndex) {
-                ConversationsView()
-                    .onTapGesture {
-                        selectedIndex = 0
-                    }
-                    .tabItem {
-                        Image(systemName: "house")
-                    }.tag(0)
-                
-                ConversationsView()
-                    .onTapGesture {
-                        selectedIndex = 1
-                    }
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                    }.tag(1)
-                
-                ConversationsView()
-                    .onTapGesture {
-                        selectedIndex = 2
-                    }
-                    .tabItem {
-                        Image(systemName: "plus.square")
-                    }.tag(2)
-                
-                SettingsView(user: user)
-                    .onTapGesture {
-                        selectedIndex = 3
-                    }
-                    .tabItem {
-                        Image(systemName: "gear")
-                    }.tag(3)
+            NavigationView {
+                TabView(selection: $selectedIndex) {
+                    ConversationsView()
+                        .onTapGesture {
+                            selectedIndex = 0
+                        }
+                        .tabItem {
+                            Image(systemName: "house")
+                        }.tag(0)
+                    
+                    ConversationsView()
+                        .onTapGesture {
+                            selectedIndex = 1
+                        }
+                        .tabItem {
+                            Image(systemName: "magnifyingglass")
+                        }.tag(1)
+                    
+                    SettingsView(user: user)
+                        .onTapGesture {
+                            selectedIndex = 2
+                        }
+                        .tabItem {
+                            Image(systemName: "gear")
+                        }.tag(2)
+                }
+                .navigationTitle(tabTitle)
             }
+        }
+    }
+    
+    var tabTitle: String {
+        switch selectedIndex {
+        case 0: return "Chats"
+        case 1: return "Channels"
+        case 2: return "Settings"
+        default: return ""
         }
     }
 }
