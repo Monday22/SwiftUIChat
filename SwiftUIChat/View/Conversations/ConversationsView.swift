@@ -27,7 +27,11 @@ struct ConversationsView: View {
                     ForEach(viewModel.recentMessages) { message in
                         if let user = message.user {
                             NavigationLink(
-                                destination: LazyView(ChatView(user: user)),
+                                destination:
+                                    LazyView(ChatView(user: user))
+                                    .onDisappear(perform: {
+                                        viewModel.fetchRecentMessages()
+                                    }),
                                 label: {
                                     ConversationCell(viewModel: MessageViewModel(message: message))
                                 })
@@ -40,10 +44,10 @@ struct ConversationsView: View {
                 Spacer()
                 
                 Button(action: { self.isShowingNewMessageView.toggle() }, label: {
-                    Image(systemName: "envelope")
+                    Image(systemName: "square.and.pencil")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 28, height: 28)
+                        .frame(width: 24, height: 24)
                         .padding()
                 })
                 .background(Color(.systemBlue))
@@ -56,9 +60,6 @@ struct ConversationsView: View {
             }
             .navigationTitle("Messages")
             .navigationBarTitleDisplayMode(.inline)
-        }
-        .onAppear {
-            viewModel.fetchRecentMessages()
         }
     }
 }

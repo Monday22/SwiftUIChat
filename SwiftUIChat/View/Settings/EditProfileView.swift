@@ -135,7 +135,6 @@ struct EditProfileView: View {
     }
     
     func loadImage() {
-        print("DEBUG: Image changed..")
         guard let selectedImage = selectedImage else { return }
         profileImage = Image(uiImage: selectedImage)
     }

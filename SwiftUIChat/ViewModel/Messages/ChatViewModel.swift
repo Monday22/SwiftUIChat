@@ -50,6 +50,7 @@ class ChatViewModel: ObservableObject {
                                    "id": messageID,
                                    "fromId": currentUid,
                                    "toId": uid,
+                                   "read": false,
                                    "timestamp": Timestamp(date: Date())]
         
         currentUserRef.setData(data)

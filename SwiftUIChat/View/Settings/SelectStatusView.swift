@@ -46,6 +46,7 @@ struct StatusCell: View {
         VStack(spacing: 4) {
             HStack {
                 Text(status.description)
+                    .foregroundColor(.black)
                 Spacer()
             }.padding(.horizontal)
 

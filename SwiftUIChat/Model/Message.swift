@@ -15,4 +15,13 @@ struct Message: Identifiable, Decodable {
     let timestamp: Timestamp
     let text: String
     var user: User?
+    var read: Bool
+}
+
+struct ChannelMessage: Identifiable, Decodable {
+    @DocumentID var id: String?
+    let fromId: String
+    let timestamp: Timestamp
+    let text: String
+    var user: User?
 }

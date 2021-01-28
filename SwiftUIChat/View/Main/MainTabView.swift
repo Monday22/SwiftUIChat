@@ -20,15 +20,15 @@ struct MainTabView: View {
                             selectedIndex = 0
                         }
                         .tabItem {
-                            Image(systemName: "house")
+                            Image(systemName: "bubble.left")
                         }.tag(0)
                     
-                    ConversationsView()
+                    ChannelsView()
                         .onTapGesture {
                             selectedIndex = 1
                         }
                         .tabItem {
-                            Image(systemName: "magnifyingglass")
+                            Image(systemName: "bubble.left.and.bubble.right")
                         }.tag(1)
                     
                     SettingsView(user: user)

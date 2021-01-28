@@ -58,6 +58,21 @@
 		232BBB6925C09F4600EBFA00 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB6825C09F4600EBFA00 /* SearchBar.swift */; };
 		232BBB6C25C09F8700EBFA00 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB6B25C09F8700EBFA00 /* UserCell.swift */; };
 		232BBB6F25C09FD500EBFA00 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB6E25C09FD500EBFA00 /* ConversationCell.swift */; };
+		232BBB7325C1CD2400EBFA00 /* SelectGroupMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB7225C1CD2300EBFA00 /* SelectGroupMembersView.swift */; };
+		232BBB7625C1CE8000EBFA00 /* SelectableUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB7525C1CE8000EBFA00 /* SelectableUserCell.swift */; };
+		232BBB7A25C1D1F000EBFA00 /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB7925C1D1F000EBFA00 /* ChannelsView.swift */; };
+		232BBB8325C1EE1600EBFA00 /* GroupMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB8225C1EE1600EBFA00 /* GroupMembersView.swift */; };
+		232BBB8725C1EFA300EBFA00 /* SelectableUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB8625C1EFA300EBFA00 /* SelectableUser.swift */; };
+		232BBB8A25C1EFD400EBFA00 /* CreateChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB8925C1EFD400EBFA00 /* CreateChannelView.swift */; };
+		232BBB8E25C1F02000EBFA00 /* CreateChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB8D25C1F02000EBFA00 /* CreateChannelViewModel.swift */; };
+		232BBB9125C1FBA800EBFA00 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9025C1FBA800EBFA00 /* Channel.swift */; };
+		232BBB9425C2025C00EBFA00 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9325C2025C00EBFA00 /* ChannelCell.swift */; };
+		232BBB9725C2027600EBFA00 /* ChannelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9625C2027600EBFA00 /* ChannelsViewModel.swift */; };
+		232BBB9A25C2066200EBFA00 /* ChannelChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9925C2066200EBFA00 /* ChannelChatView.swift */; };
+		232BBB9D25C206AE00EBFA00 /* ChannelChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9C25C206AE00EBFA00 /* ChannelChatViewModel.swift */; };
+		232BBBA025C2247E00EBFA00 /* ChannelMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9F25C2247E00EBFA00 /* ChannelMessageViewModel.swift */; };
+		232BBBA325C224C700EBFA00 /* ChannelMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBBA225C224C700EBFA00 /* ChannelMessageView.swift */; };
+		232BBBA625C225F600EBFA00 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBBA525C225F600EBFA00 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +120,21 @@
 		232BBB6825C09F4600EBFA00 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		232BBB6B25C09F8700EBFA00 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		232BBB6E25C09FD500EBFA00 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		232BBB7225C1CD2300EBFA00 /* SelectGroupMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupMembersView.swift; sourceTree = "<group>"; };
+		232BBB7525C1CE8000EBFA00 /* SelectableUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableUserCell.swift; sourceTree = "<group>"; };
+		232BBB7925C1D1F000EBFA00 /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
+		232BBB8225C1EE1600EBFA00 /* GroupMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersView.swift; sourceTree = "<group>"; };
+		232BBB8625C1EFA300EBFA00 /* SelectableUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableUser.swift; sourceTree = "<group>"; };
+		232BBB8925C1EFD400EBFA00 /* CreateChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelView.swift; sourceTree = "<group>"; };
+		232BBB8D25C1F02000EBFA00 /* CreateChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelViewModel.swift; sourceTree = "<group>"; };
+		232BBB9025C1FBA800EBFA00 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		232BBB9325C2025C00EBFA00 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		232BBB9625C2027600EBFA00 /* ChannelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewModel.swift; sourceTree = "<group>"; };
+		232BBB9925C2066200EBFA00 /* ChannelChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatView.swift; sourceTree = "<group>"; };
+		232BBB9C25C206AE00EBFA00 /* ChannelChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatViewModel.swift; sourceTree = "<group>"; };
+		232BBB9F25C2247E00EBFA00 /* ChannelMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMessageViewModel.swift; sourceTree = "<group>"; };
+		232BBBA225C224C700EBFA00 /* ChannelMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMessageView.swift; sourceTree = "<group>"; };
+		232BBBA525C225F600EBFA00 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +217,7 @@
 		232BBACA25BF2F8C00EBFA00 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				232BBB7C25C1DF8E00EBFA00 /* Channels */,
 				232BBB4525C08D7E00EBFA00 /* Messages */,
 				232BBB2825BF5C2A00EBFA00 /* Settings */,
 				232BBAF725BF346900EBFA00 /* AuthViewModel.swift */,
@@ -197,6 +228,7 @@
 		232BBACB25BF2F9000EBFA00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				232BBB7125C1CCD000EBFA00 /* Channels */,
 				232BBB5125C08E3900EBFA00 /* Chats */,
 				232BBB1A25BF4AC300EBFA00 /* Conversations */,
 				232BBB1925BF4ABE00EBFA00 /* Settings */,
@@ -211,6 +243,8 @@
 			children = (
 				232BBAE425BF340800EBFA00 /* Message.swift */,
 				232BBAE725BF340D00EBFA00 /* User.swift */,
+				232BBB8625C1EFA300EBFA00 /* SelectableUser.swift */,
+				232BBB9025C1FBA800EBFA00 /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				232BBB0A25BF39AF00EBFA00 /* ImageUploader.swift */,
+				232BBBA525C225F600EBFA00 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -295,6 +330,32 @@
 				232BBB5F25C08EFB00EBFA00 /* CustomInputView.swift */,
 			);
 			path = Chats;
+			sourceTree = "<group>";
+		};
+		232BBB7125C1CCD000EBFA00 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				232BBBA225C224C700EBFA00 /* ChannelMessageView.swift */,
+				232BBB7225C1CD2300EBFA00 /* SelectGroupMembersView.swift */,
+				232BBB7525C1CE8000EBFA00 /* SelectableUserCell.swift */,
+				232BBB7925C1D1F000EBFA00 /* ChannelsView.swift */,
+				232BBB8225C1EE1600EBFA00 /* GroupMembersView.swift */,
+				232BBB8925C1EFD400EBFA00 /* CreateChannelView.swift */,
+				232BBB9325C2025C00EBFA00 /* ChannelCell.swift */,
+				232BBB9925C2066200EBFA00 /* ChannelChatView.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		232BBB7C25C1DF8E00EBFA00 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				232BBB8D25C1F02000EBFA00 /* CreateChannelViewModel.swift */,
+				232BBB9625C2027600EBFA00 /* ChannelsViewModel.swift */,
+				232BBB9C25C206AE00EBFA00 /* ChannelChatViewModel.swift */,
+				232BBB9F25C2247E00EBFA00 /* ChannelMessageViewModel.swift */,
+			);
+			path = Channels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,12 +447,15 @@
 			files = (
 				232BBB0725BF370600EBFA00 /* ImagePicker.swift in Sources */,
 				232BBB5725C08EA700EBFA00 /* ChatBubble.swift in Sources */,
+				232BBB7625C1CE8000EBFA00 /* SelectableUserCell.swift in Sources */,
+				232BBB9A25C2066200EBFA00 /* ChannelChatView.swift in Sources */,
 				232BBB3D25BFA21500EBFA00 /* Extensions.swift in Sources */,
 				232BBAF225BF344800EBFA00 /* LoginView.swift in Sources */,
 				232BBB0425BF36C500EBFA00 /* ProfilePhotoSelectView.swift in Sources */,
 				232BBB6925C09F4600EBFA00 /* SearchBar.swift in Sources */,
 				232BBB2025BF4AD300EBFA00 /* SettingsView.swift in Sources */,
 				232BBB1725BF4A7900EBFA00 /* MainTabView.swift in Sources */,
+				232BBB9425C2025C00EBFA00 /* ChannelCell.swift in Sources */,
 				232BBB4E25C08DE200EBFA00 /* MessageViewModel.swift in Sources */,
 				232BBB1025BF3AAF00EBFA00 /* LazyView.swift in Sources */,
 				232BBB4725C08D8B00EBFA00 /* ChatViewModel.swift in Sources */,
@@ -399,24 +463,36 @@
 				232BBB4B25C08DC300EBFA00 /* ConversationsViewModel.swift in Sources */,
 				232BBB5D25C08EDC00EBFA00 /* MessageView.swift in Sources */,
 				232BBAB425BF2D8200EBFA00 /* AppDelegate.swift in Sources */,
+				232BBB8A25C1EFD400EBFA00 /* CreateChannelView.swift in Sources */,
 				232BBAEE25BF343D00EBFA00 /* ContentView.swift in Sources */,
 				232BBAF525BF344F00EBFA00 /* RegistrationView.swift in Sources */,
+				232BBB9125C1FBA800EBFA00 /* Channel.swift in Sources */,
+				232BBB8325C1EE1600EBFA00 /* GroupMembersView.swift in Sources */,
 				232BBB2E25BF5D7100EBFA00 /* SettingsCellViewModel.swift in Sources */,
 				232BBB4325BFBA6700EBFA00 /* SelectStatusView.swift in Sources */,
+				232BBB8725C1EFA300EBFA00 /* SelectableUser.swift in Sources */,
 				232BBB1C25BF4ACE00EBFA00 /* ConversationsView.swift in Sources */,
 				232BBB6625C09EA300EBFA00 /* NewMessageViewModel.swift in Sources */,
 				232BBAFE25BF34F700EBFA00 /* CustomTextField.swift in Sources */,
 				232BBB0B25BF39AF00EBFA00 /* ImageUploader.swift in Sources */,
 				232BBB5A25C08EB800EBFA00 /* ChatView.swift in Sources */,
 				232BBAF825BF346900EBFA00 /* AuthViewModel.swift in Sources */,
+				232BBBA625C225F600EBFA00 /* UserService.swift in Sources */,
 				232BBAE525BF340800EBFA00 /* Message.swift in Sources */,
 				232BBB2625BF5B2500EBFA00 /* SettingsCell.swift in Sources */,
+				232BBB9D25C206AE00EBFA00 /* ChannelChatViewModel.swift in Sources */,
 				232BBAB625BF2D8200EBFA00 /* SceneDelegate.swift in Sources */,
+				232BBBA325C224C700EBFA00 /* ChannelMessageView.swift in Sources */,
+				232BBB7A25C1D1F000EBFA00 /* ChannelsView.swift in Sources */,
+				232BBB7325C1CD2400EBFA00 /* SelectGroupMembersView.swift in Sources */,
 				232BBB2325BF58B300EBFA00 /* SettingsHeader.swift in Sources */,
+				232BBBA025C2247E00EBFA00 /* ChannelMessageViewModel.swift in Sources */,
 				232BBB6325C09E7900EBFA00 /* NewMessageView.swift in Sources */,
 				232BBB6F25C09FD500EBFA00 /* ConversationCell.swift in Sources */,
 				232BBB3125BF681500EBFA00 /* EditProfileView.swift in Sources */,
 				232BBB0125BF351400EBFA00 /* CustomSecureField.swift in Sources */,
+				232BBB8E25C1F02000EBFA00 /* CreateChannelViewModel.swift in Sources */,
+				232BBB9725C2027600EBFA00 /* ChannelsViewModel.swift in Sources */,
 				232BBB6C25C09F8700EBFA00 /* UserCell.swift in Sources */,
 				232BBAE825BF340D00EBFA00 /* User.swift in Sources */,
 				232BBAFB25BF348A00EBFA00 /* Constants.swift in Sources */,
