@@ -37,7 +37,7 @@ struct MessageView: View {
             } else {
                 HStack(alignment: .bottom) {
                     
-                    KFImage(URL(string: viewModel.message.user?.profileImageUrl ?? ""))
+                    KFImage(viewModel.profileImageUrl)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 32, height: 32)

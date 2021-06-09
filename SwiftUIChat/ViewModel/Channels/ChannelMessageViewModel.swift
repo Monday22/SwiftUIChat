@@ -7,12 +7,8 @@
 
 import Foundation
 
-class ChannelMessageViewModel: ObservableObject {
-    @Published var message: ChannelMessage
-    
-    init(message: ChannelMessage) {
-        self.message = message
-    }
+struct ChannelMessageViewModel {
+    let message: ChannelMessage
     
     var currentUid: String { return AuthViewModel.shared.userSession?.uid ?? "" }
     

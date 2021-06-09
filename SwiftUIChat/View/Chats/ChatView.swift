@@ -20,14 +20,21 @@ struct ChatView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    ForEach(viewModel.messages) { message in
-                        MessageView(viewModel: MessageViewModel(message: message))
-                    }
-                }
-            }.padding(.top)
             
+            ScrollViewReader { value in
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        ForEach(viewModel.messages) { message in
+                            MessageView(viewModel: MessageViewModel(message: message))
+                                .id(message.id)
+                        }
+                    }.padding(.top)
+                }
+                .onReceive(viewModel.$messageToSetVisible, perform: { id in
+                    value.scrollTo(id)
+                })
+            }
+                        
             CustomInputView(inputText: $messageText,
                             selectedImage: $selectedImage,
                             action: sendMessage)

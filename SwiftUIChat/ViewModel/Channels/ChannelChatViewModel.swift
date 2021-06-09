@@ -33,13 +33,15 @@ class ChannelChatViewModel: ObservableObject {
     func fetchMessages() {
         guard let channelId = channel.id else { return }
         guard let currentUid = AuthViewModel.shared.currentUser?.id else { return }
-        
-        let query = COLLECTION_CHANNELS.document(channelId).collection("messages")
+                
+        let query = COLLECTION_CHANNELS
+            .document(channelId)
+            .collection("messages")
+            .order(by: "timestamp", descending: false)
         
         query.addSnapshotListener { snapshot, error in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
             let messages = changes.compactMap({ try? $0.document.data(as: ChannelMessage.self) })
-                .sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
             
             self.messages.append(contentsOf: messages)
                         

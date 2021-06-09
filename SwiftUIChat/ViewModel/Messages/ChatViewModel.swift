@@ -15,7 +15,9 @@ enum MessageType {
 
 class ChatViewModel: ObservableObject {
     let user: User
+    
     @Published var messages = [Message]()
+    @Published var messageToSetVisible: String?
     
     init(user: User) {
         self.user = user
@@ -33,13 +35,17 @@ class ChatViewModel: ObservableObject {
         
         query.addSnapshotListener { snapshot, error in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
-            var messages = changes.compactMap({ try? $0.document.data(as: Message.self) })
-            
-            for (index, message) in messages.enumerated() where message.fromId != currentUid {
-                messages[index].user = self.user
-            }
+            let messages = changes.compactMap({ try? $0.document.data(as: Message.self) })
             
             self.messages.append(contentsOf: messages)
+                        
+            for (index, message) in self.messages.enumerated() where message.fromId != currentUid {
+                self.messages[index].user = self.user
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.messageToSetVisible = self.messages.last?.id
+                }
+            }
         }
     }
     

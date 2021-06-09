@@ -11,6 +11,7 @@ import Firebase
 enum UploadType {
     case profile
     case message
+    case channel
     
     var filePath: StorageReference {
         let filename = NSUUID().uuidString
@@ -19,6 +20,9 @@ enum UploadType {
             return Storage.storage().reference(withPath: "/profile_images/\(filename)")
         case .message:
             return Storage.storage().reference(withPath: "/message_images/\(filename)")
+        case .channel:
+        return Storage.storage().reference(withPath: "/channel_images/\(filename)")
+
         }
     }
 }

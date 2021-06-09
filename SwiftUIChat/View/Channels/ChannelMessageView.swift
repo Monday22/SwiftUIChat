@@ -9,12 +9,13 @@ import SwiftUI
 import Kingfisher
 
 struct ChannelMessageView: View {
-    @ObservedObject var viewModel: ChannelMessageViewModel
+    let viewModel: ChannelMessageViewModel
     
     var body: some View {
         HStack {
             if viewModel.isFromCurrentUser {
                 Spacer()
+                
                 Text(viewModel.message.text)
                     .padding(12)
                     .background(Color.blue)

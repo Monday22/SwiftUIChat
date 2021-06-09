@@ -10,7 +10,6 @@ import SwiftUI
 struct ChannelChatView: View {
     @State var messageText: String = ""
     @ObservedObject var viewModel: ChannelChatViewModel
-    @State var messageIdToSetVisible: String?
     @State private var selectedImage: UIImage?
     
     init(channel: Channel) {
