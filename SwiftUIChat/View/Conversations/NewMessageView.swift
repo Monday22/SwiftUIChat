@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewMessageView: View {
     @State var searchText = ""
+    @State var isEditing = false
     @Binding var show: Bool
     @Binding var startChat: Bool
     @Binding var user: User?
@@ -16,7 +17,8 @@ struct NewMessageView: View {
     
     var body: some View {
         ScrollView {
-            SearchBar(text: $searchText, isEditing: .constant(false))
+            SearchBar(text: $searchText, isEditing: $isEditing)
+                .onTapGesture {isEditing.toggle() }
                 .padding()
 
             VStack(alignment: .leading) {

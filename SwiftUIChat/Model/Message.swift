@@ -16,6 +16,7 @@ struct Message: Identifiable, Decodable {
     let text: String
     var user: User?
     var read: Bool
+    var imageUrl: String?
 }
 
 struct ChannelMessage: Identifiable, Decodable {

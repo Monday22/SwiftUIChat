@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CustomInputView: View {
     @Binding var inputText: String
-    let placeholder: String
+    @Binding var selectedImage: UIImage?
+    @State private var showImagePicker = false
+    @State private var image: Image?
     
     var action: () -> Void
     
@@ -21,11 +23,33 @@ struct CustomInputView: View {
                 .padding(.bottom, 8)
             
             HStack {
-                TextField(placeholder, text: $inputText)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(.body)
-                    .frame(minHeight: 30)
-                
+                if let image = image, selectedImage != nil {
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .clipped()
+                        .frame(width: 140, height: 140)
+                        .cornerRadius(10)
+                    
+                    Spacer()
+                } else {
+                    Button {
+                        showImagePicker.toggle()
+                    } label: {
+                        Image(systemName: "photo")
+                            .foregroundColor(.black)
+                            .padding(.trailing, 4)
+                    }.sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                        ImagePicker(image: $selectedImage)
+                    })
+
+                    
+                    TextField("Message..", text: $inputText)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .font(.body)
+                        .frame(minHeight: 30)
+                }
+                                
                 Button(action: action) {
                     Text("Send")
                         .bold()
@@ -35,5 +59,10 @@ struct CustomInputView: View {
             .padding(.bottom, 8)
             .padding(.horizontal)
         }
+    }
+    
+    private func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        image = Image(uiImage: selectedImage)
     }
 }

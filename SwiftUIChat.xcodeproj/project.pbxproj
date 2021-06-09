@@ -73,6 +73,7 @@
 		232BBBA025C2247E00EBFA00 /* ChannelMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBB9F25C2247E00EBFA00 /* ChannelMessageViewModel.swift */; };
 		232BBBA325C224C700EBFA00 /* ChannelMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBBA225C224C700EBFA00 /* ChannelMessageView.swift */; };
 		232BBBA625C225F600EBFA00 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232BBBA525C225F600EBFA00 /* UserService.swift */; };
+		23A06204265AB27F002B00C9 /* EmptySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A06203265AB27F002B00C9 /* EmptySetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		232BBB9F25C2247E00EBFA00 /* ChannelMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMessageViewModel.swift; sourceTree = "<group>"; };
 		232BBBA225C224C700EBFA00 /* ChannelMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelMessageView.swift; sourceTree = "<group>"; };
 		232BBBA525C225F600EBFA00 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		23A06203265AB27F002B00C9 /* EmptySetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 				232BBB6225C09E7800EBFA00 /* NewMessageView.swift */,
 				232BBB6B25C09F8700EBFA00 /* UserCell.swift */,
 				232BBB6E25C09FD500EBFA00 /* ConversationCell.swift */,
+				23A06203265AB27F002B00C9 /* EmptySetView.swift */,
 			);
 			path = Conversations;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				232BBB1025BF3AAF00EBFA00 /* LazyView.swift in Sources */,
 				232BBB4725C08D8B00EBFA00 /* ChatViewModel.swift in Sources */,
 				232BBB3725BF69F000EBFA00 /* EditProfileViewModel.swift in Sources */,
+				23A06204265AB27F002B00C9 /* EmptySetView.swift in Sources */,
 				232BBB4B25C08DC300EBFA00 /* ConversationsViewModel.swift in Sources */,
 				232BBB5D25C08EDC00EBFA00 /* MessageView.swift in Sources */,
 				232BBAB425BF2D8200EBFA00 /* AppDelegate.swift in Sources */,

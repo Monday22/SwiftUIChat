@@ -22,25 +22,33 @@ struct ChannelMessageView: View {
                     .foregroundColor(.white)
                     .padding(.horizontal)
                     .padding(.leading, 100)
-                    .font(.system(size: 14))
+                    .font(.system(size: 15))
             } else {
-                HStack(alignment: .bottom) {
-                    KFImage(URL(string: viewModel.message.user?.profileImageUrl ?? ""))
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                    
-                    Text(viewModel.message.text)
-                        .padding(12)
-                        .background(Color(.systemGray5))
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(viewModel.fullname)
+                        .foregroundColor(.gray)
                         .font(.system(size: 14))
-                        .clipShape(ChatBubble(isFromCurrentUser: false))
-                        .foregroundColor(.black)
+                        .padding(.leading, 44)
                     
+                    HStack(alignment: .bottom) {
+                        KFImage(URL(string: viewModel.message.user?.profileImageUrl ?? ""))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 32, height: 32)
+                            .clipShape(Circle())
+                        
+                        Text(viewModel.message.text)
+                            .padding(12)
+                            .background(Color(.systemGray5))
+                            .font(.system(size: 15))
+                            .clipShape(ChatBubble(isFromCurrentUser: false))
+                            .foregroundColor(.black)
+                    }
                 }
+                .padding(.bottom, 8)
                 .padding(.horizontal)
                 .padding(.trailing, 80)
+                
                 Spacer()
             }
         }

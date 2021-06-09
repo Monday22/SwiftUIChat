@@ -15,32 +15,54 @@ struct MessageView: View {
         HStack {
             if viewModel.isFromCurrentUser {
                 Spacer()
-                Text(viewModel.message.text)
-                    .padding()
-                    .background(Color.blue)
-                    .clipShape(ChatBubble(isFromCurrentUser: true))
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.leading, 100)
-                    .font(.body)
-            } else {
-                HStack(alignment: .bottom) {
-                    KFImage(viewModel.profileImageUrl)
+                
+                if viewModel.isImageMessage {
+                    KFImage(viewModel.messageImageUrl)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .frame(maxWidth: UIScreen.main.bounds.width / 1.5, maxHeight: 800)
+                        .cornerRadius(10)
+                        .padding(.trailing)
+                } else {
+                    Text(viewModel.message.text)
+                        .padding(12)
+                        .background(Color.blue)
+                        .clipShape(ChatBubble(isFromCurrentUser: true))
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                        .padding(.leading, 100)
+                        .font(.system(size: 15))
+                }
+            } else {
+                HStack(alignment: .bottom) {
+                    
+                    KFImage(URL(string: viewModel.message.user?.profileImageUrl ?? ""))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 32, height: 32)
                         .clipShape(Circle())
                     
-                    Text(viewModel.message.text)
-                        .padding()
-                        .background(Color(.systemGray5))
-                        .font(.body)
-                        .clipShape(ChatBubble(isFromCurrentUser: false))
-                        .foregroundColor(.black)
+                    if viewModel.isImageMessage {
+                        KFImage(viewModel.messageImageUrl)
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .frame(maxWidth: UIScreen.main.bounds.width / 1.5, maxHeight: 800)
+                            .cornerRadius(10)
+                    } else {
+                        Text(viewModel.message.text)
+                            .padding(12)
+                            .background(Color(.systemGray5))
+                            .font(.system(size: 15))
+                            .clipShape(ChatBubble(isFromCurrentUser: false))
+                            .foregroundColor(.black)
+                    }
                     
                 }
                 .padding(.horizontal)
-                .padding(.trailing, 100)
+                .padding(.trailing, 80)
+                
                 Spacer()
             }
         }

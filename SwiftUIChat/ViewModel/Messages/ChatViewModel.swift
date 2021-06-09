@@ -8,6 +8,11 @@
 import SwiftUI
 import Firebase
 
+enum MessageType {
+    case text(String)
+    case image(UIImage)
+}
+
 class ChatViewModel: ObservableObject {
     let user: User
     @Published var messages = [Message]()
@@ -20,8 +25,11 @@ class ChatViewModel: ObservableObject {
     func fetchMessages() {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return }
         guard let uid = user.id else { return }
-        
-        let query = COLLECTION_MESSAGES.document(currentUid).collection(uid)
+                
+        let query = COLLECTION_MESSAGES
+            .document(currentUid)
+            .collection(uid)
+            .order(by: "timestamp", descending: false)
         
         query.addSnapshotListener { snapshot, error in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
@@ -35,7 +43,19 @@ class ChatViewModel: ObservableObject {
         }
     }
     
-    func sendMessage(_ messageText: String) {
+    func send(type: MessageType) {
+        switch type {
+        case .text(let messageText):
+            sendMessage(messageText)
+            
+        case .image(let image):
+            ImageUploader.uploadImage(image: image, type: .message) { imageUrl in
+                self.sendMessage("Attachment: 1 image", imageUrl)
+            }
+        }
+    }
+    
+    private func sendMessage(_ messageText: String, _ imageUrl: String? = nil) {
         guard let currentUid = AuthViewModel.shared.currentUser?.id else { return }
         guard let uid = user.id else { return }
         
@@ -46,12 +66,16 @@ class ChatViewModel: ObservableObject {
         
         let messageID = currentUserRef.documentID
         
-        let data: [String: Any] = ["text": messageText,
+        var data: [String: Any] = ["text": messageText,
                                    "id": messageID,
                                    "fromId": currentUid,
                                    "toId": uid,
                                    "read": false,
                                    "timestamp": Timestamp(date: Date())]
+        
+        if let imageUrl = imageUrl {
+            data["imageUrl"] = imageUrl
+        }
         
         currentUserRef.setData(data)
         currentRecentRef.document(uid).setData(data)

@@ -39,10 +39,10 @@ class ChannelChatViewModel: ObservableObject {
         query.addSnapshotListener { snapshot, error in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
             let messages = changes.compactMap({ try? $0.document.data(as: ChannelMessage.self) })
-                .sorted(by: { $0.timestamp.dateValue() < $1.timestamp.dateValue() })
+                .sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
             
             self.messages.append(contentsOf: messages)
-            
+                        
             for (index, message) in self.messages.enumerated() where message.fromId != currentUid {
                 UserService.fetchUser(withUid: message.fromId) { user in
                     self.messages[index].user = user
@@ -52,3 +52,18 @@ class ChannelChatViewModel: ObservableObject {
         }
     }
 }
+
+// FIXME: Performance Improvement
+
+/*
+ 
+ Problem:
+ Fetching user repeatedly unecessarily
+ Only need to fetch each member of chat once
+ Then link that user to all of their messages in the chat
+ 
+ 1. use dictionary to grab unique user ids for each message
+ 2. fetch user and figure out how to link one user to multiple messages.
+ 3. Use dictionary?? [User: [ChannelMessages]] ---> This creates a data structure that has a one to many relationship
+ 
+ */

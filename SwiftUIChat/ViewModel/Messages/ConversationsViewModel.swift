@@ -33,6 +33,7 @@ class ConversationsViewModel: ObservableObject {
                     message.user = user
                     self.recentMessagesDictionary[uid] = message
                     self.recentMessages = Array(self.recentMessagesDictionary.values)
+                        .sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
                 }
             }
         }

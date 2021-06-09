@@ -10,7 +10,8 @@ import SwiftUI
 struct ChatView: View {
     let user: User
     @ObservedObject var viewModel: ChatViewModel
-    @State var messageText: String = ""
+    @State private var messageText: String = ""
+    @State private var selectedImage: UIImage?
     
     init(user: User) {
         self.user = user
@@ -27,16 +28,22 @@ struct ChatView: View {
                 }
             }.padding(.top)
             
-            CustomInputView(inputText: $messageText, placeholder: "Message...", action: sendMessage)
+            CustomInputView(inputText: $messageText,
+                            selectedImage: $selectedImage,
+                            action: sendMessage)
                 .padding()
-            
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
     }
     
     func sendMessage() {
-        viewModel.sendMessage(messageText)
-        messageText = ""
+        if let image = selectedImage {
+            viewModel.send(type: .image(image))
+            selectedImage = nil
+        } else {
+            viewModel.send(type: .text(messageText))
+            messageText = ""
+        }
     }
 }
