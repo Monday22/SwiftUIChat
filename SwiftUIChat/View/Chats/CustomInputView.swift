@@ -24,12 +24,27 @@ struct CustomInputView: View {
             
             HStack {
                 if let image = image, selectedImage != nil {
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .frame(width: 140, height: 140)
-                        .cornerRadius(10)
+                    ZStack(alignment: .topTrailing) {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .frame(width: 140, height: 140)
+                            .cornerRadius(10)
+                        
+                        Button(action: {
+                            selectedImage = nil
+                        }, label: {
+                            Image(systemName: "xmark")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 10, height: 10)
+                                .padding(8)
+                        })
+                        .background(Color(.gray))
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                    }
                     
                     Spacer()
                 } else {
