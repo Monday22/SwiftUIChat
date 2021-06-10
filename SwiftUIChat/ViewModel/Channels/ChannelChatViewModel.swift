@@ -10,6 +10,7 @@ import Firebase
 class ChannelChatViewModel: ObservableObject {
     @Published var messages = [ChannelMessage]()
     @Published var messageToSetVisible: String?
+    private var users = [User]()
     let channel: Channel
     
     init(channel: Channel) {
@@ -46,9 +47,17 @@ class ChannelChatViewModel: ObservableObject {
             self.messages.append(contentsOf: messages)
                         
             for (index, message) in self.messages.enumerated() where message.fromId != currentUid {
-                UserService.fetchUser(withUid: message.fromId) { user in
-                    self.messages[index].user = user
-                    self.messageToSetVisible = self.messages.last?.id
+                
+                if let index = self.users.firstIndex(where: { $0.id == message.fromId }) {
+                    print("DEBUG: Found user \(self.users[index].username)")
+                    self.messages[index].user = self.users[index]
+                } else {
+                    UserService.fetchUser(withUid: message.fromId) { user in
+                        print("DEBUG: Did fetch user \(user)")
+                        self.users.append(user)
+                        self.messages[index].user = user
+                        self.messageToSetVisible = self.messages.last?.id
+                    }
                 }
             }
         }
